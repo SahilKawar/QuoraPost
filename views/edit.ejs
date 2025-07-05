@@ -1,0 +1,38 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Edit post</title>
+</head>
+<body>
+    <h2> Edit your post </h2>
+    <p>Post id: <%= post.id %></p>
+    <p>Username : @ <%=  post.username%></p>
+    <form method="post" action="/posts/<%= post.id %>?_method=PATCH">
+        <textarea rows="10" cols="35" name="content"><%= post.content %></textarea>
+        <button> Submit </button>
+    </form>
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Post</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="form-container">
+    <h2>Edit Your Post 🛠️</h2>
+    <p>Username: <strong>@<%= post.username %></strong></p>
+    <form method="POST" action="/posts/<%= post.id %>?_method=PATCH">
+      <textarea name="content" required><%= post.content %></textarea>
+      <button type="submit" class="btn btn-warning">💾 Save Changes</button>
+    </form>
+    <a href="/posts" class="btn btn-outline" style ="margin-top:20px;">← Cancel</a>
+  </div>
+</body>
+</html>

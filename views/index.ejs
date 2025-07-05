@@ -1,0 +1,69 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Posts</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Quora</h1>
+    <% for(let post of posts){ %>
+        <div class="post">
+            <h3 class="user">@<%= post.username %></h3>
+            <h4 class="content"><%= post.content %></h4>
+            <br>
+            <a href="http://localhost:8080/posts/<%=post.id%>">See in detail</a>
+            <a href="http://localhost:8080/posts/<%=post.id%>/edit">Edit</a>
+            <form method="post" action="/posts/<%= post.id %>?_method=DELETE"> 
+                <button>Delete Post</button>
+            </form>
+         </div>
+    <% }%>
+    <br><br>
+    <a href="/posts/new" class="btn primary">Create New Post</a>
+</body>
+</html>-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quora Clone - All Posts</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>🧠 Quora Clone</h1>
+
+    <div class="action-bar">
+      <a href="/posts/new" class="btn btn-primary">➕ Create New Post</a>
+    </div>
+
+    <div class="feed">
+      <% for(let post of posts) { %>
+        <div class="card">
+          <div class="card-header">
+            <h3>@<%= post.username %></h3>
+          </div>
+          <div class="card-body">
+            <p><%= post.content %></p>
+          </div>
+          <div class="card-actions">
+            <a href="/posts/<%= post.id %>" class="btn btn-outline">🔍 View</a>
+            <a href="/posts/<%= post.id %>/edit" class="btn btn-warning">✏️ Edit</a>
+            <form method="POST" action="/posts/<%= post.id %>?_method=DELETE" class="inline-form">
+              <button class="btn btn-danger">🗑️ Delete</button>
+            </form>
+          </div>
+        </div>
+      <% } %>
+    </div>
+  </div>
+
+</body>
+</html>
+

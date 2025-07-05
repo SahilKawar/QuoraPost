@@ -1,0 +1,37 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Create New Post</title>
+</head>
+<body>
+    <form method="post" action="/posts">
+        <input placeholder="enter username" name="username"/> <br />
+        <textarea placeholder="write your post" name="content"></textarea><br />
+        <button>Submit Post</button>
+    </form>
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create New Post</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="form-container">
+    <h2>Create a New Post ✍️</h2>
+    <form method="POST" action="/posts">
+      <input type="text" name="username" placeholder="Enter your username" required />
+      <textarea name="content" placeholder="Write your post..." required></textarea>
+      <button type="submit" class="btn btn-primary">🚀 Submit Post</button>
+    </form>
+    
+    <a href="/posts" class="btn btn-outline"style ="margin-top:20px;">← Back to Feed</a>
+  </div>
+</body>
+</html>
